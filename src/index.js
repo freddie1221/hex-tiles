@@ -22,8 +22,8 @@ function hexGenerator() {
 
 function renderCards() {
   let array = []
-  while (array.length < 40) {
-    array.push(<Card color={hexGenerator()}/>)
+  for (let i = 0; i < 40; i ++) {
+    array.push(<Card key={i} color={hexGenerator()}/>)
   }
   return array;
 }
