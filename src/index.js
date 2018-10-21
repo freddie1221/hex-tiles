@@ -1,12 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Card from './components/Card'
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
+function hexValue() {
+  let values = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F']
+  let randomNumber = Math.floor(Math.random() * 16)
+  return values[randomNumber]
+}
+
+function hexGenerator() {
+  let array = []
+  while(array.length < 6) {
+    array.push(hexValue())
+  }
+  array.unshift('#')
+  return array.join('')
+}
+
+function renderCards() {
+  let array = []
+  while (array.length < 40) {
+    array.push(<Card color={hexGenerator()}/>)
+  }
+  return array;
+}
+
+// ? How can I get the component to re render when loaded
+
+
+ReactDOM.render(<>{renderCards()}</>, document.getElementById('root'));
+
+
 serviceWorker.unregister();
