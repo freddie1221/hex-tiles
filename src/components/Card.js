@@ -40,8 +40,8 @@ class Square extends Component {
 class Label extends Component {
   render() {
     const labelStyle = {
-      fontFamily: "sans-serif",
-      fontWeight: "bold",
+      fontFamily: "nunito sans",
+      // fontWeight: "bold",
       padding: 13,
       margin: 0
     }
